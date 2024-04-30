@@ -12,6 +12,7 @@ import (
 	mimirClient "github.com/grafana/alloy/internal/mimir/client"
 	v1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
 	promListers "github.com/prometheus-operator/prometheus-operator/pkg/client/listers/monitoring/v1"
+	alertmanagerconfig "github.com/prometheus/alertmanager/config"
 	"github.com/prometheus/prometheus/model/rulefmt"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
@@ -35,6 +36,18 @@ func newFakeMimirClient() *fakeMimirClient {
 	return &fakeMimirClient{
 		rules: make(map[string][]rulefmt.RuleGroup),
 	}
+}
+
+func (m *fakeMimirClient) CreateAlertmanagerConfig(ctx context.Context, amc alertmanagerconfig.Config) error {
+	return nil
+}
+
+func (m *fakeMimirClient) DeleteAlertmanagerConfig(ctx context.Context) error {
+	return nil
+}
+
+func (m *fakeMimirClient) GetAlertmanagerConfig(ctx context.Context) (alertmanagerconfig.Config, error) {
+	return alertmanagerconfig.Config{}, nil
 }
 
 func (m *fakeMimirClient) CreateRuleGroup(ctx context.Context, namespace string, rule rulefmt.RuleGroup) error {

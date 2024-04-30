@@ -261,6 +261,7 @@ require (
 	github.com/KimMachineGun/automemlimit v0.6.0
 	github.com/Shopify/sarama v1.38.1
 	github.com/grafana/kafka_exporter v0.0.0-20240409084445-5e3488ad9f9a
+	github.com/prometheus/alertmanager v0.26.0
 )
 
 require (
@@ -589,7 +590,6 @@ require (
 	github.com/power-devops/perfstat v0.0.0-20220216144756-c35f1ee13d7c // indirect
 	github.com/prometheus-community/go-runit v0.1.0 // indirect
 	github.com/prometheus-community/prom-label-proxy v0.6.0 // indirect
-	github.com/prometheus/alertmanager v0.26.0 // indirect
 	github.com/prometheus/exporter-toolkit v0.11.0 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/relvacode/iso8601 v1.4.0 // indirect
